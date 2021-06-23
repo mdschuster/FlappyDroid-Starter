@@ -5,8 +5,6 @@ using UnityEngine;
 public class Pipe : MonoBehaviour
 {
 
-    private float despawnPosition = -20f;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -16,10 +14,7 @@ public class Pipe : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (transform.position.x <= despawnPosition)
-        {
-            Destroy(this.gameObject);
-        }
+
     }
 
     /// <summary>
@@ -27,9 +22,6 @@ public class Pipe : MonoBehaviour
     /// </summary>
     void FixedUpdate()
     {
-        if (GameManager.instance().moving == false) return;
-        Vector3 pos = this.transform.position;
-        pos.x -= 0.1f;
-        this.transform.position = pos;
+
     }
 }
